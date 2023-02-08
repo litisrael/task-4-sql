@@ -78,7 +78,7 @@ export const saveUser = (user) => {
 export const deleteLine = (id) => {
   const line = +getValueByKey(id);
   const offset = (line - 1) * LINE_SIZE + 1;
-  const buffer = Buffer.from("-".repeat(LINE_SIZE));
+  const buffer = Buffer.from("-".repeat(LINE_SIZE-3));
   const stream = fs.createWriteStream("users.txt", {
     flags: "r+",
     start: offset,
